@@ -1,0 +1,17 @@
+Strategy pattern is the encapsulation of a method into a class and being able to swap the algorithm being used without having to change the calling code.
+
+Advantages of using Strategy Pattern
+
+1. Using encapsulation the algorithm separately, new algorithms complying with the same interface can be easily introduced.
+2. The strategy pattern application can switch strategies at run-time.
+3. Strategy enables the clients to choose the required algorithm, without using a "switch" statement or a series of "if-else" statements.
+4. Data structures used for implementing the algorithm is completely encapsulated in Strategy classes. Therefore, the implementation of an algorithm can be changed without affecting the Context class.
+5. The same Strategy object can be strategically shared between different Context objects. However, the shared Strategy object should not maintain states across invocations.
+
+Disadvantages of using Strategy Pattern
+
+1. The client must be aware of all the strategies to select the right one for the right situation.
+2. Strategy and Context classes may be tightly coupled. The Context must supply the relevant data to the Strategy for implementing the algorithm and sometimes, all the data passed by the Context may not be relevant to all the Concrete Strategies.
+3. Context and the Strategy classes normally communicate through the interface specified by the abstract Strategy base class. Strategy base class must expose interface for all the required behaviors, which some concrete Strategy classes might not implement.
+4. The application configures the Context with the required Strategy object. Therefore, the application needs to create and maintain two objects in place of one.
+5. Since, the Strategy object is created by the client in most cases; the Context has no control on lifetime of the Strategy object. However, the Context can make a local copy of the Strategy object. But, this increases the memory requirement and has a sure performance impact.
